@@ -33,7 +33,6 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     
-    self.navBar.barTintColor = [UIColor redColor];
     
     self.navItem.title = @"66";
     
@@ -53,7 +52,7 @@
     [shopHeaderView mas_makeConstraints:^(MASConstraintMaker *make)
      {
         make.left.top.right.offset(0);
-         make.height.offset(180);
+         make.height.offset(KShopHeaderViewMaxHeight);
      }];
     
     //添加平移手势
@@ -77,8 +76,19 @@
     //更新约束
     [_shopHeaderView mas_updateConstraints:^(MASConstraintMaker *make)
     {
-        make.height.offset(p.y + _shopHeaderView.bounds.size.height);
-    }];
+//        make.height.offset(p.y + _shopHeaderView.bounds.size.height);
+        if (p.y + _shopHeaderView.bounds.size.height <= 64)
+        {
+            make.height.offset(KShopHeaderViewMinHeight);
+        } else if (p.y + _shopHeaderView.bounds.size.height >= 180)
+        {
+            make.height.offset(KShopHeaderViewMaxHeight);
+        }
+        else
+        {
+            make.height.offset(p.y + _shopHeaderView.bounds.size.height);
+        }
+            }];
     
     //恢复到初始值
     [pan setTranslation:CGPointZero inView:pan.view];
