@@ -50,6 +50,7 @@
 		BDDDA8E11F2DFCFE00AAB746 /* MTFoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8E01F2DFCFE00AAB746 /* MTFoodDetailController.m */; };
 		BDDDA8E51F2E01A800AAB746 /* MTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8E41F2E01A800AAB746 /* MTBaseController.m */; };
 		BDDDA8E81F2E01C400AAB746 /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8E71F2E01C400AAB746 /* MTNavigationController.m */; };
+		BDDDA8EB1F2E170C00AAB746 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8EA1F2E170C00AAB746 /* MTNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,8 @@
 		BDDDA8E41F2E01A800AAB746 /* MTBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBaseController.m; sourceTree = "<group>"; };
 		BDDDA8E61F2E01C400AAB746 /* MTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationController.h; sourceTree = "<group>"; };
 		BDDDA8E71F2E01C400AAB746 /* MTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationController.m; sourceTree = "<group>"; };
+		BDDDA8E91F2E170C00AAB746 /* MTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationBar.h; sourceTree = "<group>"; };
+		BDDDA8EA1F2E170C00AAB746 /* MTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +361,8 @@
 				BDDDA8E71F2E01C400AAB746 /* MTNavigationController.m */,
 				BDDDA8E31F2E01A800AAB746 /* MTBaseController.h */,
 				BDDDA8E41F2E01A800AAB746 /* MTBaseController.m */,
+				BDDDA8E91F2E170C00AAB746 /* MTNavigationBar.h */,
+				BDDDA8EA1F2E170C00AAB746 /* MTNavigationBar.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				BDDDA8DA1F2DFB6A00AAB746 /* UIView+WebCacheOperation.m in Sources */,
 				BDDDA84A1F2DFA2200AAB746 /* main.m in Sources */,
 				BDDDA8C21F2DFB6A00AAB746 /* MASViewAttribute.m in Sources */,
+				BDDDA8EB1F2E170C00AAB746 /* MTNavigationBar.m in Sources */,
 				BDDDA8E11F2DFCFE00AAB746 /* MTFoodDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

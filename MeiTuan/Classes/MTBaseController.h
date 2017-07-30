@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class MTNavigationBar;
+
 @interface MTBaseController : UIViewController
 //导航条
-@property (nonatomic, strong) UINavigationBar *navBar;
+@property (nonatomic, strong, readonly) MTNavigationBar *navBar;
 //导航标签
-@property (nonatomic, strong) UINavigationItem *navItem;
+@property (nonatomic, strong, readonly) UINavigationItem *navItem;
 
 @end

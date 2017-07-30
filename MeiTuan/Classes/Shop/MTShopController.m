@@ -44,7 +44,7 @@
     //创建头部视图
     UIView *shopHeaderView = [[UIView alloc] init];
     
-    shopHeaderView.backgroundColor = [UIColor purpleColor];
+    shopHeaderView.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:shopHeaderView];
     

@@ -7,6 +7,7 @@
 //
 
 #import "MTBaseController.h"
+#import "MTNavigationBar.h"
 
 @interface MTBaseController ()
 
@@ -21,7 +22,7 @@
     
     if (self) {
         //每一个继承该类的控制器都创建一个导航条
-        UINavigationBar *navBar = [[UINavigationBar alloc] init];
+        MTNavigationBar *navBar = [[MTNavigationBar alloc] init];
 
         
         //给导航条添加item
