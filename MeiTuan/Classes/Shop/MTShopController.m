@@ -20,6 +20,11 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor orangeColor];
+    
+    self.navBar.barTintColor = [UIColor redColor];
+    
+    self.navItem.title = @"66";
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

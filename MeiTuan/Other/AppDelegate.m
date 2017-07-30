@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MTShopController.h"
+#import "MTNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +26,7 @@
     
     //创建控制器
     MTShopController *shopVC = [[MTShopController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:shopVC];
+    MTNavigationController *nav = [[MTNavigationController alloc] initWithRootViewController:shopVC];
     
     //给窗口指定跟控制器
     _window.rootViewController = nav;

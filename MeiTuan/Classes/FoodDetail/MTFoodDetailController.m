@@ -18,6 +18,8 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor greenColor];
+    
+    self.navItem.title = @"88";
 }
 
 - (void)didReceiveMemoryWarning {

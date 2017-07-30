@@ -6,8 +6,8 @@
 //  Copyright © 2017年 wzc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MTBaseController.h"
 
-@interface MTShopController : UIViewController
+@interface MTShopController :MTBaseController
 
 @end
