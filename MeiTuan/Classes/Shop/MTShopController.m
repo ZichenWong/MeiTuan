@@ -8,6 +8,7 @@
 
 #import "MTShopController.h"
 #import "MTFoodDetailController.h"
+#import "MTNavigationBar.h"
 
 //头部视图的最大高度
 #define KShopHeaderViewMaxHeight   180
@@ -36,6 +37,9 @@
     
     self.navItem.title = @"66";
     
+    //默认导航条的背景图片完全透明
+    self.navBar.bgImageView.alpha = 0;
+
 }
 
 //界面搭建
@@ -44,7 +48,7 @@
     //创建头部视图
     UIView *shopHeaderView = [[UIView alloc] init];
     
-    shopHeaderView.backgroundColor = [UIColor whiteColor];
+    shopHeaderView.backgroundColor = [UIColor purpleColor];
     
     [self.view addSubview:shopHeaderView];
     
@@ -90,10 +94,25 @@
         }
             }];
     
+    
+    //透明度设置
+    CGFloat alpha = [self resultWithConsult:_shopHeaderView.bounds.size.height andConsult1:64 andResult1:1 andConsult2:180 andResult2:0];
+    
+    self.navBar.bgImageView.alpha = alpha;
+    
+    
     //恢复到初始值
     [pan setTranslation:CGPointZero inView:pan.view];
     
     
+}
+
+- (CGFloat)resultWithConsult:(CGFloat)consult andConsult1:(CGFloat)consult1 andResult1:(CGFloat)result1 andConsult2:(CGFloat)consult2 andResult2:(CGFloat)result2 {
+    CGFloat a = (result1 - result2) / (consult1 - consult2);
+    CGFloat b = result1 - (a * consult1);
+    
+    
+    return a * consult + b;
 }
 
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
