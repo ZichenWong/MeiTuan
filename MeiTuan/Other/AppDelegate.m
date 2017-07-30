@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MTShopController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //创建窗口
+    _window = [[UIWindow alloc] init];
+    
+    //创建控制器
+    MTShopController *shopVC = [[MTShopController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:shopVC];
+    
+    //给窗口指定跟控制器
+    _window.rootViewController = nav;
+    
+    //使窗口成为主窗口并可视
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 
