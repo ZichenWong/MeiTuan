@@ -15,5 +15,7 @@
 @property (nonatomic, strong, readonly) MTNavigationBar *navBar;
 //导航标签
 @property (nonatomic, strong, readonly) UINavigationItem *navItem;
+//状态栏样式
+@property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
 
 @end

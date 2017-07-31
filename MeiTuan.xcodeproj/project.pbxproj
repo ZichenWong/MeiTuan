@@ -51,6 +51,7 @@
 		BDDDA8E51F2E01A800AAB746 /* MTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8E41F2E01A800AAB746 /* MTBaseController.m */; };
 		BDDDA8E81F2E01C400AAB746 /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8E71F2E01C400AAB746 /* MTNavigationController.m */; };
 		BDDDA8EB1F2E170C00AAB746 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8EA1F2E170C00AAB746 /* MTNavigationBar.m */; };
+		BDDDA8EE1F2EB2AA00AAB746 /* NSObject+LinearFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8ED1F2EB2AA00AAB746 /* NSObject+LinearFormula.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +150,9 @@
 		BDDDA8E71F2E01C400AAB746 /* MTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationController.m; sourceTree = "<group>"; };
 		BDDDA8E91F2E170C00AAB746 /* MTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationBar.h; sourceTree = "<group>"; };
 		BDDDA8EA1F2E170C00AAB746 /* MTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationBar.m; sourceTree = "<group>"; };
+		BDDDA8EC1F2EB2AA00AAB746 /* NSObject+LinearFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LinearFormula.h"; sourceTree = "<group>"; };
+		BDDDA8ED1F2EB2AA00AAB746 /* NSObject+LinearFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LinearFormula.m"; sourceTree = "<group>"; };
+		BDDDA8EF1F2EB2FC00AAB746 /* Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Additions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,9 @@
 		BDDDA8621F2DFAD100AAB746 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BDDDA8EC1F2EB2AA00AAB746 /* NSObject+LinearFormula.h */,
+				BDDDA8ED1F2EB2AA00AAB746 /* NSObject+LinearFormula.m */,
+				BDDDA8EF1F2EB2FC00AAB746 /* Additions.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -467,6 +474,7 @@
 				BDDDA8BB1F2DFB6A00AAB746 /* AFURLRequestSerialization.m in Sources */,
 				BDDDA8CC1F2DFB6A00AAB746 /* SDImageCacheConfig.m in Sources */,
 				BDDDA8B91F2DFB6A00AAB746 /* AFNetworkReachabilityManager.m in Sources */,
+				BDDDA8EE1F2EB2AA00AAB746 /* NSObject+LinearFormula.m in Sources */,
 				BDDDA8BC1F2DFB6A00AAB746 /* AFURLResponseSerialization.m in Sources */,
 				BDDDA8C01F2DFB6A00AAB746 /* MASConstraintMaker.m in Sources */,
 				BDDDA8CF1F2DFB6A00AAB746 /* SDWebImageDownloader.m in Sources */,

@@ -19,6 +19,8 @@
 
 //头部视图
 @property (nonatomic, weak) UIView *shopHeaderView;
+//分享按钮
+@property (nonatomic, strong) UIBarButtonItem *rightButtonItem;
 
 @end
 
@@ -35,10 +37,19 @@
     self.view.backgroundColor = [UIColor orangeColor];
     
     
-    self.navItem.title = @"66";
+    self.navItem.title = @"黑暗料理";
     
     //默认导航条的背景图片完全透明
     self.navBar.bgImageView.alpha = 0;
+    
+    //设置导航条标题文字颜色完全透明
+    self.navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithWhite:0.4 alpha:0]};
+    
+    //设置导航条右边分享按钮
+    _rightButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_share"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navItem.rightBarButtonItem = _rightButtonItem;
+    self.navBar.tintColor = [UIColor whiteColor];
+
 
 }
 
@@ -96,24 +107,41 @@
     
     
     //透明度设置
-    CGFloat alpha = [self resultWithConsult:_shopHeaderView.bounds.size.height andConsult1:64 andResult1:1 andConsult2:180 andResult2:0];
+    CGFloat alpha = [@(_shopHeaderView.bounds.size.height) resultWithValue1:HMValueMake(64, 1) andValue2:HMValueMake(180, 0)];
     
     self.navBar.bgImageView.alpha = alpha;
     
+    // 设置导航条标题文字颜色和导航条背景变化是一样的
+    self.navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithWhite:0.4 alpha:alpha]};
+    
+    //计算分享按钮的白色值
+    CGFloat White = [@(_shopHeaderView.bounds.size.height) resultWithValue1:HMValueMake(64, 0.4) andValue2:HMValueMake(180, 1)];
+    
+    //设置分享按钮的颜色
+    self.navBar.tintColor = [UIColor colorWithWhite:White alpha:1];
+    
+    //高度180用白色
+    if (_shopHeaderView.bounds.size.height == KShopHeaderViewMaxHeight && self.statusBarStyle != UIStatusBarStyleLightContent)
+    {
+        self.statusBarStyle = UIStatusBarStyleLightContent;
+        
+    }//反之用黑色
+    else if (_shopHeaderView.bounds.size.height == KShopHeaderViewMinHeight && self.statusBarStyle != UIStatusBarStyleDefault){
+        self.statusBarStyle = UIStatusBarStyleDefault;
+    }
     
     //恢复到初始值
     [pan setTranslation:CGPointZero inView:pan.view];
     
-    
 }
 
-- (CGFloat)resultWithConsult:(CGFloat)consult andConsult1:(CGFloat)consult1 andResult1:(CGFloat)result1 andConsult2:(CGFloat)consult2 andResult2:(CGFloat)result2 {
-    CGFloat a = (result1 - result2) / (consult1 - consult2);
-    CGFloat b = result1 - (a * consult1);
-    
-    
-    return a * consult + b;
-}
+//- (CGFloat)resultWithConsult:(CGFloat)consult andConsult1:(CGFloat)consult1 andResult1:(CGFloat)result1 andConsult2:(CGFloat)consult2 andResult2:(CGFloat)result2 {
+//    CGFloat a = (result1 - result2) / (consult1 - consult2);
+//    CGFloat b = result1 - (a * consult1);
+//    
+//    
+//    return a * consult + b;
+//}
 
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 //{

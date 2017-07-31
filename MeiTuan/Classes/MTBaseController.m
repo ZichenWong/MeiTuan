@@ -69,6 +69,20 @@
     }
 }
 
+//重写属性的set方法
+- (void)setStatusBarStyle:(UIStatusBarStyle)statusBarStyle
+{
+    _statusBarStyle = statusBarStyle;
+
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+//设置状态栏样式
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return self.statusBarStyle;
+}
+
 
 
 
