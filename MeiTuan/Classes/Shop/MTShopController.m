@@ -18,7 +18,7 @@
 //头部视图的最小高度
 #define KShopHeaderViewMinHeight   64
 
-@interface MTShopController ()
+@interface MTShopController ()<UIScrollViewDelegate>
 
 //头部视图
 @property (nonatomic, weak) UIView *shopHeaderView;
@@ -26,7 +26,10 @@
 @property (nonatomic, strong) UIBarButtonItem *rightButtonItem;
 //标签视图
 @property (nonatomic, weak) UIView *shopTagView;
-
+//指示条
+@property (nonatomic, weak) UIView *shopTageLineView;
+//滚动视图
+@property (nonatomic, weak) UIScrollView *scrollView;
 
 @end
 
@@ -144,9 +147,11 @@
         make.width.offset(50);
         make.height.offset(4);
         make.bottom.offset(0);
-        // 小黄条加约束的代码要写在按钮添加约束的后面
         make.centerX.equalTo(orderButton).offset(0);
     }];
+    
+    //给全局属性赋值
+    _shopTageLineView = shopTagLineView;
 }
 
 
@@ -158,9 +163,23 @@
     [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:14];
     
+    //给按钮添加监听事件
+    [button addTarget:self action:@selector(shopTagButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //标签视图中的子控件数量作为按钮的tag
+    button.tag = _shopTagView.subviews.count;
+    
+    
     [_shopTagView addSubview:button];
     
     return button;
+}
+
+//点击标签栏中的按钮调用
+- (void)shopTagButtonClick:(UIButton *)button
+{
+    //动画的方法让scrollView中的内容滚动
+    [_scrollView setContentOffset:CGPointMake(button.tag * _scrollView.bounds.size.width, 0) animated:YES];
 }
 
 //创建滚动视图
@@ -206,6 +225,51 @@
     }];
     
     [scrollView.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    
+    scrollView.delegate = self;
+    
+    //给全局属性赋值
+    _scrollView = scrollView;
+}
+
+//监听scrollView滚动
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //取小数页
+    CGFloat page = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    
+    //计算指示条每一次位移的距离
+    CGFloat transformOnceX = _shopTagView.bounds.size.width / (_shopTagView.subviews.count - 1);
+    
+    //设置指示条水平方向偏移
+    _shopTageLineView.transform = CGAffineTransformMakeTranslation(transformOnceX * page, 0);
+}
+
+//手指滚动停下来调用的方法
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    //取整页数
+    NSInteger page = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    //遍历标签栏中的所有子控件
+    for (NSInteger i = 0; i < _shopTagView.subviews.count; i++)
+    {
+        UIButton *btn = _shopTagView.subviews[i];
+
+        if ([btn isKindOfClass:[UIButton class]])
+        {
+            if (page == i)
+            {
+                btn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+            } else
+            {
+                btn.titleLabel.font = [UIFont systemFontOfSize:14];
+            }
+        }
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self scrollViewDidEndDecelerating:scrollView];
 }
 
 
@@ -263,19 +327,5 @@
     
 }
 
-//- (CGFloat)resultWithConsult:(CGFloat)consult andConsult1:(CGFloat)consult1 andResult1:(CGFloat)result1 andConsult2:(CGFloat)consult2 andResult2:(CGFloat)result2 {
-//    CGFloat a = (result1 - result2) / (consult1 - consult2);
-//    CGFloat b = result1 - (a * consult1);
-//    
-//    
-//    return a * consult + b;
-//}
-
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-//{
-//    MTFoodDetailController *foodDetailVC = [[MTFoodDetailController alloc] init];
-//    
-//    [self.navigationController pushViewController:foodDetailVC animated:YES];
-//}
 
 @end
