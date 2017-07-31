@@ -9,6 +9,9 @@
 #import "MTShopController.h"
 #import "MTFoodDetailController.h"
 #import "MTNavigationBar.h"
+#import "MTShopOrderController.h"
+#import "MTShopCommentController.h"
+#import "MTShopInfoController.h"
 
 //头部视图的最大高度
 #define KShopHeaderViewMaxHeight   180
@@ -21,6 +24,9 @@
 @property (nonatomic, weak) UIView *shopHeaderView;
 //分享按钮
 @property (nonatomic, strong) UIBarButtonItem *rightButtonItem;
+//标签视图
+@property (nonatomic, weak) UIView *shopTagView;
+
 
 @end
 
@@ -36,7 +42,14 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     
-    
+    [self settingNormal];
+
+
+}
+
+//常规设置
+- (void)settingNormal
+{
     self.navItem.title = @"黑暗料理";
     
     //默认导航条的背景图片完全透明
@@ -49,12 +62,30 @@
     _rightButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_share"] style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navItem.rightBarButtonItem = _rightButtonItem;
     self.navBar.tintColor = [UIColor whiteColor];
+    
+    //添加平移手势
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+    
+    [self.view addGestureRecognizer:pan];
 
-
+    
+    
 }
 
 //界面搭建
 - (void)setupUI
+{
+    [self settingShopHeaderView];
+    
+    [self settingShopTagView];
+    
+    [self settingShopScrollView];
+    
+    
+}
+
+//创建头部视图
+- (void)settingShopHeaderView
 {
     //创建头部视图
     UIView *shopHeaderView = [[UIView alloc] init];
@@ -66,20 +97,118 @@
     //设置约束
     [shopHeaderView mas_makeConstraints:^(MASConstraintMaker *make)
      {
-        make.left.top.right.offset(0);
+         make.left.top.right.offset(0);
          make.height.offset(KShopHeaderViewMaxHeight);
      }];
     
-    //添加平移手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
-    
-    [self.view addGestureRecognizer:pan];
     
     //给全局属性赋值
     _shopHeaderView = shopHeaderView;
-    
+
 
 }
+
+//创建标签栏
+- (void)settingShopTagView
+{
+    UIView *shopTagView = [[UIView alloc] init];
+    shopTagView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:shopTagView];
+    
+    [shopTagView mas_makeConstraints:^(MASConstraintMaker *make)
+    {
+        make.left.right.offset(0);
+        make.top.equalTo(_shopHeaderView.mas_bottom).offset(0);
+        make.height.offset(44);
+    }];
+    
+    _shopTagView = shopTagView;
+    
+    //创建标签栏中的按钮
+    UIButton *orderButton = [self makeShopTagViewButtonWithTitle:@"点菜"];
+    [self makeShopTagViewButtonWithTitle:@"评价"];
+    [self makeShopTagViewButtonWithTitle:@"商家"];
+    
+    [shopTagView.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.offset(0);
+    }];
+    
+    [shopTagView.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    
+    //添加指示条
+    UIView *shopTagLineView = [[UIView alloc] init];
+    shopTagLineView.backgroundColor = [UIColor primaryYellowColor];
+    [shopTagView addSubview:shopTagLineView];
+    
+    [shopTagLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.offset(50);
+        make.height.offset(4);
+        make.bottom.offset(0);
+        // 小黄条加约束的代码要写在按钮添加约束的后面
+        make.centerX.equalTo(orderButton).offset(0);
+    }];
+}
+
+
+//创建标签栏中的按钮
+- (UIButton *)makeShopTagViewButtonWithTitle:(NSString *)title
+{
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:14];
+    
+    [_shopTagView addSubview:button];
+    
+    return button;
+}
+
+//创建滚动视图
+- (void)settingShopScrollView
+{
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:scrollView];
+    
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.bounces = NO;
+    scrollView.pagingEnabled = YES;
+    
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.left.bottom.right.offset(0);
+         make.top.equalTo(_shopTagView.mas_bottom).offset(0);
+     }];
+    
+    //创建三个控制器
+    MTShopOrderController *vc1 = [[MTShopOrderController alloc] init];
+    MTShopCommentController *vc2 = [[MTShopCommentController alloc] init];
+    MTShopInfoController *vc3 = [[MTShopInfoController alloc] init];
+    
+    //把三个控制器保存在一个数组里
+    NSArray *vcs = @[vc1, vc2, vc3];
+    
+    
+    for (UIViewController *vc in vcs)
+    {
+        [scrollView addSubview:vc.view];
+        
+        [self addChildViewController:vc];
+        
+        [vc didMoveToParentViewController:self];
+    }
+    
+    [scrollView.subviews mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+        make.top.bottom.offset(0);
+        make.width.height.equalTo(scrollView);
+    }];
+    
+    [scrollView.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+}
+
+
 
 
 //平移手势
@@ -91,7 +220,6 @@
     //更新约束
     [_shopHeaderView mas_updateConstraints:^(MASConstraintMaker *make)
     {
-//        make.height.offset(p.y + _shopHeaderView.bounds.size.height);
         if (p.y + _shopHeaderView.bounds.size.height <= 64)
         {
             make.height.offset(KShopHeaderViewMinHeight);

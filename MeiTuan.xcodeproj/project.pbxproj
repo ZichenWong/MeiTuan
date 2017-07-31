@@ -52,6 +52,10 @@
 		BDDDA8E81F2E01C400AAB746 /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8E71F2E01C400AAB746 /* MTNavigationController.m */; };
 		BDDDA8EB1F2E170C00AAB746 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8EA1F2E170C00AAB746 /* MTNavigationBar.m */; };
 		BDDDA8EE1F2EB2AA00AAB746 /* NSObject+LinearFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8ED1F2EB2AA00AAB746 /* NSObject+LinearFormula.m */; };
+		BDDDA8F21F2F550400AAB746 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8F11F2F550400AAB746 /* UIColor+Addition.m */; };
+		BDDDA8F81F2F59BB00AAB746 /* MTShopOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8F71F2F59BB00AAB746 /* MTShopOrderController.m */; };
+		BDDDA8FB1F2F59CE00AAB746 /* MTShopCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8FA1F2F59CE00AAB746 /* MTShopCommentController.m */; };
+		BDDDA8FE1F2F59DF00AAB746 /* MTShopInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8FD1F2F59DF00AAB746 /* MTShopInfoController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +157,14 @@
 		BDDDA8EC1F2EB2AA00AAB746 /* NSObject+LinearFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LinearFormula.h"; sourceTree = "<group>"; };
 		BDDDA8ED1F2EB2AA00AAB746 /* NSObject+LinearFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LinearFormula.m"; sourceTree = "<group>"; };
 		BDDDA8EF1F2EB2FC00AAB746 /* Additions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Additions.h; sourceTree = "<group>"; };
+		BDDDA8F01F2F550400AAB746 /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		BDDDA8F11F2F550400AAB746 /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		BDDDA8F61F2F59BB00AAB746 /* MTShopOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopOrderController.h; sourceTree = "<group>"; };
+		BDDDA8F71F2F59BB00AAB746 /* MTShopOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopOrderController.m; sourceTree = "<group>"; };
+		BDDDA8F91F2F59CE00AAB746 /* MTShopCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopCommentController.h; sourceTree = "<group>"; };
+		BDDDA8FA1F2F59CE00AAB746 /* MTShopCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopCommentController.m; sourceTree = "<group>"; };
+		BDDDA8FC1F2F59DF00AAB746 /* MTShopInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopInfoController.h; sourceTree = "<group>"; };
+		BDDDA8FD1F2F59DF00AAB746 /* MTShopInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopInfoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +224,9 @@
 				BDDDA8E21F2E019100AAB746 /* Main */,
 				BDDDA8611F2DFAD100AAB746 /* Shop */,
 				BDDDA8601F2DFAD100AAB746 /* FoodDetail */,
+				BDDDA8F31F2F594C00AAB746 /* ShopOrder */,
+				BDDDA8F41F2F597100AAB746 /* ShopComment */,
+				BDDDA8F51F2F598800AAB746 /* ShopInfo */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -237,6 +252,8 @@
 		BDDDA8621F2DFAD100AAB746 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BDDDA8F01F2F550400AAB746 /* UIColor+Addition.h */,
+				BDDDA8F11F2F550400AAB746 /* UIColor+Addition.m */,
 				BDDDA8EC1F2EB2AA00AAB746 /* NSObject+LinearFormula.h */,
 				BDDDA8ED1F2EB2AA00AAB746 /* NSObject+LinearFormula.m */,
 				BDDDA8EF1F2EB2FC00AAB746 /* Additions.h */,
@@ -374,6 +391,33 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		BDDDA8F31F2F594C00AAB746 /* ShopOrder */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA8F61F2F59BB00AAB746 /* MTShopOrderController.h */,
+				BDDDA8F71F2F59BB00AAB746 /* MTShopOrderController.m */,
+			);
+			name = ShopOrder;
+			sourceTree = "<group>";
+		};
+		BDDDA8F41F2F597100AAB746 /* ShopComment */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA8F91F2F59CE00AAB746 /* MTShopCommentController.h */,
+				BDDDA8FA1F2F59CE00AAB746 /* MTShopCommentController.m */,
+			);
+			name = ShopComment;
+			sourceTree = "<group>";
+		};
+		BDDDA8F51F2F598800AAB746 /* ShopInfo */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA8FC1F2F59DF00AAB746 /* MTShopInfoController.h */,
+				BDDDA8FD1F2F59DF00AAB746 /* MTShopInfoController.m */,
+			);
+			name = ShopInfo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -444,11 +488,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDDA8F81F2F59BB00AAB746 /* MTShopOrderController.m in Sources */,
 				BDDDA8D71F2DFB6A00AAB746 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BDDDA8B81F2DFB6A00AAB746 /* AFHTTPSessionManager.m in Sources */,
 				BDDDA8D11F2DFB6A00AAB746 /* SDWebImageManager.m in Sources */,
 				BDDDA8E81F2E01C400AAB746 /* MTNavigationController.m in Sources */,
 				BDDDA8CD1F2DFB6A00AAB746 /* SDWebImageCompat.m in Sources */,
+				BDDDA8FB1F2F59CE00AAB746 /* MTShopCommentController.m in Sources */,
 				BDDDA8D21F2DFB6A00AAB746 /* SDWebImagePrefetcher.m in Sources */,
 				BDDDA8BD1F2DFB6A00AAB746 /* AFURLSessionManager.m in Sources */,
 				BDDDA8C41F2DFB6A00AAB746 /* NSArray+MASAdditions.m in Sources */,
@@ -459,6 +505,7 @@
 				BDDDA8D61F2DFB6A00AAB746 /* UIImage+WebP.m in Sources */,
 				BDDDA8C11F2DFB6A00AAB746 /* MASLayoutConstraint.m in Sources */,
 				BDDDA8CB1F2DFB6A00AAB746 /* SDImageCache.m in Sources */,
+				BDDDA8FE1F2F59DF00AAB746 /* MTShopInfoController.m in Sources */,
 				BDDDA8D91F2DFB6A00AAB746 /* UIView+WebCache.m in Sources */,
 				BDDDA8BF1F2DFB6A00AAB746 /* MASConstraint.m in Sources */,
 				BDDDA8D41F2DFB6A00AAB746 /* UIImage+GIF.m in Sources */,
@@ -485,6 +532,7 @@
 				BDDDA8DA1F2DFB6A00AAB746 /* UIView+WebCacheOperation.m in Sources */,
 				BDDDA84A1F2DFA2200AAB746 /* main.m in Sources */,
 				BDDDA8C21F2DFB6A00AAB746 /* MASViewAttribute.m in Sources */,
+				BDDDA8F21F2F550400AAB746 /* UIColor+Addition.m in Sources */,
 				BDDDA8EB1F2E170C00AAB746 /* MTNavigationBar.m in Sources */,
 				BDDDA8E11F2DFCFE00AAB746 /* MTFoodDetailController.m in Sources */,
 			);
