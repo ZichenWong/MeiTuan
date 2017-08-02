@@ -12,6 +12,9 @@
 #import "MTShopOrderController.h"
 #import "MTShopCommentController.h"
 #import "MTShopInfoController.h"
+#import "MTShopPOI_InfoModel.h"
+#import "MTShopHeaderView.h"
+
 
 //头部视图的最大高度
 #define KShopHeaderViewMaxHeight   180
@@ -30,6 +33,9 @@
 @property (nonatomic, weak) UIView *shopTageLineView;
 //滚动视图
 @property (nonatomic, weak) UIScrollView *scrollView;
+//头部模型数据
+@property (nonatomic, strong) MTShopPOI_InfoModel *shopPOI_InfoModel;
+
 
 @end
 
@@ -38,6 +44,8 @@
 - (void)viewDidLoad
 {
     
+    //加载数据
+    [self loadFoodData];
     //此方法优先于导航条加载
     [self setupUI];
     
@@ -70,8 +78,6 @@
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
     
     [self.view addGestureRecognizer:pan];
-
-    
     
 }
 
@@ -83,15 +89,14 @@
     [self settingShopTagView];
     
     [self settingShopScrollView];
-    
-    
+
 }
 
 //创建头部视图
 - (void)settingShopHeaderView
 {
     //创建头部视图
-    UIView *shopHeaderView = [[UIView alloc] init];
+    MTShopHeaderView *shopHeaderView = [[MTShopHeaderView alloc] init];
     
     shopHeaderView.backgroundColor = [UIColor purpleColor];
     
@@ -107,6 +112,9 @@
     
     //给全局属性赋值
     _shopHeaderView = shopHeaderView;
+    
+    //给头部视图传模型
+    shopHeaderView.shopPOI_infoModel = _shopPOI_InfoModel;
 
 
 }
@@ -272,9 +280,6 @@
     [self scrollViewDidEndDecelerating:scrollView];
 }
 
-
-
-
 //平移手势
 - (void)panGesture:(UIPanGestureRecognizer *)pan
 {
@@ -325,6 +330,20 @@
     //恢复到初始值
     [pan setTranslation:CGPointZero inView:pan.view];
     
+}
+
+//加载数据
+- (void)loadFoodData
+{
+    NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"food.json" withExtension:nil]];
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    NSDictionary *poi_dict = jsonDict[@"data"][@"poi_info"];
+    
+    MTShopPOI_InfoModel *poi_infoModel = [MTShopPOI_InfoModel shopPOI_infoWithDict:poi_dict];
+    
+    _shopPOI_InfoModel = poi_infoModel;
 }
 
 

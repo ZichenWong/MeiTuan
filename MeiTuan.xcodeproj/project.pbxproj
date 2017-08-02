@@ -56,6 +56,14 @@
 		BDDDA8F81F2F59BB00AAB746 /* MTShopOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8F71F2F59BB00AAB746 /* MTShopOrderController.m */; };
 		BDDDA8FB1F2F59CE00AAB746 /* MTShopCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8FA1F2F59CE00AAB746 /* MTShopCommentController.m */; };
 		BDDDA8FE1F2F59DF00AAB746 /* MTShopInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA8FD1F2F59DF00AAB746 /* MTShopInfoController.m */; };
+		BDDDA9011F3155F100AAB746 /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9001F3155F100AAB746 /* UILabel+Addition.m */; };
+		BDDDA9081F31569C00AAB746 /* MTShopPOI_InfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9071F31569C00AAB746 /* MTShopPOI_InfoModel.m */; };
+		BDDDA90B1F3156D700AAB746 /* MTShopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA90A1F3156D700AAB746 /* MTShopHeaderView.m */; };
+		BDDDA90D1F31571B00AAB746 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = BDDDA90C1F31571B00AAB746 /* food.json */; };
+		BDDDA9101F31F32E00AAB746 /* UIImage+Dashline.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA90F1F31F32E00AAB746 /* UIImage+Dashline.m */; };
+		BDDDA9141F31F63D00AAB746 /* MTInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9131F31F63D00AAB746 /* MTInfoModel.m */; };
+		BDDDA9171F31F66300AAB746 /* MTInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9161F31F66200AAB746 /* MTInfoView.m */; };
+		BDDDA91A1F31F67400AAB746 /* MTInfoLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9191F31F67400AAB746 /* MTInfoLoopView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +173,21 @@
 		BDDDA8FA1F2F59CE00AAB746 /* MTShopCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopCommentController.m; sourceTree = "<group>"; };
 		BDDDA8FC1F2F59DF00AAB746 /* MTShopInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopInfoController.h; sourceTree = "<group>"; };
 		BDDDA8FD1F2F59DF00AAB746 /* MTShopInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopInfoController.m; sourceTree = "<group>"; };
+		BDDDA8FF1F3155F100AAB746 /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Addition.h"; sourceTree = "<group>"; };
+		BDDDA9001F3155F100AAB746 /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
+		BDDDA9061F31569C00AAB746 /* MTShopPOI_InfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopPOI_InfoModel.h; sourceTree = "<group>"; };
+		BDDDA9071F31569C00AAB746 /* MTShopPOI_InfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopPOI_InfoModel.m; sourceTree = "<group>"; };
+		BDDDA9091F3156D700AAB746 /* MTShopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopHeaderView.h; sourceTree = "<group>"; };
+		BDDDA90A1F3156D700AAB746 /* MTShopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopHeaderView.m; sourceTree = "<group>"; };
+		BDDDA90C1F31571B00AAB746 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
+		BDDDA90E1F31F32E00AAB746 /* UIImage+Dashline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Dashline.h"; sourceTree = "<group>"; };
+		BDDDA90F1F31F32E00AAB746 /* UIImage+Dashline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Dashline.m"; sourceTree = "<group>"; };
+		BDDDA9121F31F63D00AAB746 /* MTInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTInfoModel.h; sourceTree = "<group>"; };
+		BDDDA9131F31F63D00AAB746 /* MTInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTInfoModel.m; sourceTree = "<group>"; };
+		BDDDA9151F31F66200AAB746 /* MTInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTInfoView.h; sourceTree = "<group>"; };
+		BDDDA9161F31F66200AAB746 /* MTInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTInfoView.m; sourceTree = "<group>"; };
+		BDDDA9181F31F67400AAB746 /* MTInfoLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTInfoLoopView.h; sourceTree = "<group>"; };
+		BDDDA9191F31F67400AAB746 /* MTInfoLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTInfoLoopView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +232,7 @@
 		BDDDA8481F2DFA2200AAB746 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BDDDA90C1F31571B00AAB746 /* food.json */,
 				BDDDA8541F2DFA2300AAB746 /* Assets.xcassets */,
 				BDDDA8561F2DFA2300AAB746 /* LaunchScreen.storyboard */,
 				BDDDA8591F2DFA2300AAB746 /* Info.plist */,
@@ -243,8 +267,9 @@
 		BDDDA8611F2DFAD100AAB746 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				BDDDA8DC1F2DFCEB00AAB746 /* MTShopController.h */,
-				BDDDA8DD1F2DFCEB00AAB746 /* MTShopController.m */,
+				BDDDA9031F31565C00AAB746 /* Controller */,
+				BDDDA9051F31566F00AAB746 /* Model */,
+				BDDDA9041F31566900AAB746 /* View */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -252,11 +277,15 @@
 		BDDDA8621F2DFAD100AAB746 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BDDDA8EF1F2EB2FC00AAB746 /* Additions.h */,
+				BDDDA8FF1F3155F100AAB746 /* UILabel+Addition.h */,
+				BDDDA9001F3155F100AAB746 /* UILabel+Addition.m */,
 				BDDDA8F01F2F550400AAB746 /* UIColor+Addition.h */,
 				BDDDA8F11F2F550400AAB746 /* UIColor+Addition.m */,
 				BDDDA8EC1F2EB2AA00AAB746 /* NSObject+LinearFormula.h */,
 				BDDDA8ED1F2EB2AA00AAB746 /* NSObject+LinearFormula.m */,
-				BDDDA8EF1F2EB2FC00AAB746 /* Additions.h */,
+				BDDDA90E1F31F32E00AAB746 /* UIImage+Dashline.h */,
+				BDDDA90F1F31F32E00AAB746 /* UIImage+Dashline.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -264,6 +293,7 @@
 		BDDDA8631F2DFAD100AAB746 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				BDDDA9111F31F5FA00AAB746 /* LoopView */,
 				BDDDA8681F2DFB6A00AAB746 /* AFNetworking */,
 				BDDDA8761F2DFB6A00AAB746 /* Masonry */,
 				BDDDA8901F2DFB6A00AAB746 /* SDWebImage */,
@@ -418,6 +448,46 @@
 			name = ShopInfo;
 			sourceTree = "<group>";
 		};
+		BDDDA9031F31565C00AAB746 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA8DC1F2DFCEB00AAB746 /* MTShopController.h */,
+				BDDDA8DD1F2DFCEB00AAB746 /* MTShopController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BDDDA9041F31566900AAB746 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA9091F3156D700AAB746 /* MTShopHeaderView.h */,
+				BDDDA90A1F3156D700AAB746 /* MTShopHeaderView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BDDDA9051F31566F00AAB746 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA9061F31569C00AAB746 /* MTShopPOI_InfoModel.h */,
+				BDDDA9071F31569C00AAB746 /* MTShopPOI_InfoModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BDDDA9111F31F5FA00AAB746 /* LoopView */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA9121F31F63D00AAB746 /* MTInfoModel.h */,
+				BDDDA9131F31F63D00AAB746 /* MTInfoModel.m */,
+				BDDDA9151F31F66200AAB746 /* MTInfoView.h */,
+				BDDDA9161F31F66200AAB746 /* MTInfoView.m */,
+				BDDDA9181F31F67400AAB746 /* MTInfoLoopView.h */,
+				BDDDA9191F31F67400AAB746 /* MTInfoLoopView.m */,
+			);
+			name = LoopView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -476,6 +546,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDDDA90D1F31571B00AAB746 /* food.json in Resources */,
 				BDDDA8581F2DFA2300AAB746 /* LaunchScreen.storyboard in Resources */,
 				BDDDA8551F2DFA2300AAB746 /* Assets.xcassets in Resources */,
 			);
@@ -490,9 +561,12 @@
 			files = (
 				BDDDA8F81F2F59BB00AAB746 /* MTShopOrderController.m in Sources */,
 				BDDDA8D71F2DFB6A00AAB746 /* UIImageView+HighlightedWebCache.m in Sources */,
+				BDDDA9011F3155F100AAB746 /* UILabel+Addition.m in Sources */,
 				BDDDA8B81F2DFB6A00AAB746 /* AFHTTPSessionManager.m in Sources */,
 				BDDDA8D11F2DFB6A00AAB746 /* SDWebImageManager.m in Sources */,
 				BDDDA8E81F2E01C400AAB746 /* MTNavigationController.m in Sources */,
+				BDDDA9141F31F63D00AAB746 /* MTInfoModel.m in Sources */,
+				BDDDA90B1F3156D700AAB746 /* MTShopHeaderView.m in Sources */,
 				BDDDA8CD1F2DFB6A00AAB746 /* SDWebImageCompat.m in Sources */,
 				BDDDA8FB1F2F59CE00AAB746 /* MTShopCommentController.m in Sources */,
 				BDDDA8D21F2DFB6A00AAB746 /* SDWebImagePrefetcher.m in Sources */,
@@ -502,6 +576,7 @@
 				BDDDA8D31F2DFB6A00AAB746 /* UIButton+WebCache.m in Sources */,
 				BDDDA8671F2DFAD100AAB746 /* AppDelegate.m in Sources */,
 				BDDDA8C61F2DFB6A00AAB746 /* View+MASAdditions.m in Sources */,
+				BDDDA9101F31F32E00AAB746 /* UIImage+Dashline.m in Sources */,
 				BDDDA8D61F2DFB6A00AAB746 /* UIImage+WebP.m in Sources */,
 				BDDDA8C11F2DFB6A00AAB746 /* MASLayoutConstraint.m in Sources */,
 				BDDDA8CB1F2DFB6A00AAB746 /* SDImageCache.m in Sources */,
@@ -511,6 +586,8 @@
 				BDDDA8D41F2DFB6A00AAB746 /* UIImage+GIF.m in Sources */,
 				BDDDA8CA1F2DFB6A00AAB746 /* NSImage+WebCache.m in Sources */,
 				BDDDA8DE1F2DFCEB00AAB746 /* MTShopController.m in Sources */,
+				BDDDA91A1F31F67400AAB746 /* MTInfoLoopView.m in Sources */,
+				BDDDA9171F31F66300AAB746 /* MTInfoView.m in Sources */,
 				BDDDA8C51F2DFB6A00AAB746 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				BDDDA8D51F2DFB6A00AAB746 /* UIImage+MultiFormat.m in Sources */,
 				BDDDA8E51F2E01A800AAB746 /* MTBaseController.m in Sources */,
@@ -531,6 +608,7 @@
 				BDDDA8D81F2DFB6A00AAB746 /* UIImageView+WebCache.m in Sources */,
 				BDDDA8DA1F2DFB6A00AAB746 /* UIView+WebCacheOperation.m in Sources */,
 				BDDDA84A1F2DFA2200AAB746 /* main.m in Sources */,
+				BDDDA9081F31569C00AAB746 /* MTShopPOI_InfoModel.m in Sources */,
 				BDDDA8C21F2DFB6A00AAB746 /* MASViewAttribute.m in Sources */,
 				BDDDA8F21F2F550400AAB746 /* UIColor+Addition.m in Sources */,
 				BDDDA8EB1F2E170C00AAB746 /* MTNavigationBar.m in Sources */,
