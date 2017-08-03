@@ -10,6 +10,7 @@
 #import "MTShopPOI_InfoModel.h"
 #import "MTInfoLoopView.h"
 #import "MTShopDetailController.h"
+#import "MTShopDetailAnimator.h"
 
 @interface MTShopHeaderView ()
 //背景view
@@ -22,6 +23,8 @@
 @property (nonatomic, weak) UILabel *bulletinLabel;
 //轮播视图
 @property (nonatomic, weak) MTInfoLoopView *loopView;
+//转场动画对象
+@property (nonatomic, strong) MTShopDetailAnimator *animator;
 
 @end
 @implementation MTShopHeaderView
@@ -104,6 +107,7 @@
     avatarView.clipsToBounds = YES;
     avatarView.layer.borderColor = [UIColor colorWithWhite:1 alpha:0.7].CGColor;
     avatarView.layer.borderWidth = 2;
+    avatarView.contentMode = UIViewContentModeScaleAspectFill;
     
     [avatarView mas_makeConstraints:^(MASConstraintMaker *make)
      {
@@ -147,9 +151,6 @@
     
     [loopView addGestureRecognizer:tap];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self loopViewClick];
-    });
     
 }
 
@@ -160,9 +161,13 @@
     
     detailVC.shopPOIInfoModel = _shopPOI_infoModel;
     
-    //模态商家详情控制器
-    [self.viewController presentViewController:detailVC animated:YES completion:nil];
+    detailVC.modalPresentationStyle = UIModalPresentationCustom;
     
+    _animator = [[MTShopDetailAnimator alloc] init];
+    
+    detailVC.transitioningDelegate = _animator;
+    
+    [self.viewController presentViewController:detailVC animated:YES completion:nil];
     
 }
 

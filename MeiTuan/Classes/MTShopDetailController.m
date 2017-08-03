@@ -11,6 +11,21 @@
 #import "MTInfoModel.h"
 #import "MTInfoView.h"
 
+@interface MTScrollView : UIScrollView
+
+@end
+
+@implementation MTScrollView
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    
+    [self.viewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+@end
+
+
 @interface MTShopDetailController ()
 
 @end
@@ -53,7 +68,7 @@
     [closeBtn addTarget:self action:@selector(closeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     //添加滚动视图
-    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    MTScrollView *scrollView = [[MTScrollView alloc] init];
     [self.view addSubview:scrollView];
     
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make)
@@ -223,6 +238,13 @@
 {
     return UIStatusBarStyleLightContent;
 
-
 }
+
+//当手从商家详情控制器view上抬起时调用
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
