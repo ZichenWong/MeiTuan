@@ -19,8 +19,8 @@
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     //画线
-    CGContextMoveToPoint(ctx, 0, 1);
-    CGContextAddLineToPoint(ctx, 4, 1);
+    CGContextMoveToPoint(ctx, 0, 0);
+    CGContextAddLineToPoint(ctx, 4, 0);
     
     //设置为虚线样式
     CGFloat lengths[] = {2, 2};

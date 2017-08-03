@@ -69,6 +69,7 @@
 		BDDDA9261F333C4A00AAB746 /* MTShopDetailAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9251F333C4A00AAB746 /* MTShopDetailAnimator.m */; };
 		BDDDA9301F33485500AAB746 /* MTShopOrderCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA92F1F33485500AAB746 /* MTShopOrderCategoryModel.m */; };
 		BDDDA9331F33486900AAB746 /* MTShopOrderFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9321F33486900AAB746 /* MTShopOrderFoodModel.m */; };
+		BDDDA9361F3352A900AAB746 /* MTShopOrderCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9351F3352A900AAB746 /* MTShopOrderCategoryCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -203,6 +204,8 @@
 		BDDDA92F1F33485500AAB746 /* MTShopOrderCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopOrderCategoryModel.m; sourceTree = "<group>"; };
 		BDDDA9311F33486900AAB746 /* MTShopOrderFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopOrderFoodModel.h; sourceTree = "<group>"; };
 		BDDDA9321F33486900AAB746 /* MTShopOrderFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopOrderFoodModel.m; sourceTree = "<group>"; };
+		BDDDA9341F3352A900AAB746 /* MTShopOrderCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopOrderCategoryCell.h; sourceTree = "<group>"; };
+		BDDDA9351F3352A900AAB746 /* MTShopOrderCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopOrderCategoryCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -537,6 +540,8 @@
 		BDDDA9281F33452000AAB746 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BDDDA9341F3352A900AAB746 /* MTShopOrderCategoryCell.h */,
+				BDDDA9351F3352A900AAB746 /* MTShopOrderCategoryCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 				BDDDA9141F31F63D00AAB746 /* MTInfoModel.m in Sources */,
 				BDDDA90B1F3156D700AAB746 /* MTShopHeaderView.m in Sources */,
 				BDDDA8CD1F2DFB6A00AAB746 /* SDWebImageCompat.m in Sources */,
+				BDDDA9361F3352A900AAB746 /* MTShopOrderCategoryCell.m in Sources */,
 				BDDDA8FB1F2F59CE00AAB746 /* MTShopCommentController.m in Sources */,
 				BDDDA8D21F2DFB6A00AAB746 /* SDWebImagePrefetcher.m in Sources */,
 				BDDDA8BD1F2DFB6A00AAB746 /* AFURLSessionManager.m in Sources */,

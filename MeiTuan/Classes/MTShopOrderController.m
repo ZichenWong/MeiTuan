@@ -9,6 +9,7 @@
 #import "MTShopOrderController.h"
 #import "MTShopOrderFoodModel.h"
 #import "MTShopOrderCategoryModel.h"
+#import "MTShopOrderCategoryCell.h"
 
 @interface MTShopOrderController ()<UITableViewDelegate, UITableViewDataSource>
 //食品类型tableView
@@ -59,7 +60,11 @@ static NSString *foodCellID = @"foodCellID";
     categoryTableView.delegate = self;
     categoryTableView.dataSource = self;
     //注册cell
-    [categoryTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:categoryCellID];
+    [categoryTableView registerClass:[MTShopOrderCategoryCell class] forCellReuseIdentifier:categoryCellID];
+    //设置行高
+    categoryTableView.rowHeight = 60;
+    //隐藏分割线
+    categoryTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 //食物表格
@@ -112,10 +117,10 @@ static NSString *foodCellID = @"foodCellID";
     //返回类型表格cell
     if (tableView == _categoryTableView)
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID forIndexPath:indexPath];
-        //取出类型模型
-        MTShopOrderCategoryModel *categoryModel = _categoryData[indexPath.row];
-        cell.textLabel.text = categoryModel.name;
+        MTShopOrderCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID forIndexPath:indexPath];
+
+        cell.categoryModel = _categoryData[indexPath.row];
+        
         //返回cell
         return cell;
         
