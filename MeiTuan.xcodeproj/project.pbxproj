@@ -64,6 +64,8 @@
 		BDDDA9141F31F63D00AAB746 /* MTInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9131F31F63D00AAB746 /* MTInfoModel.m */; };
 		BDDDA9171F31F66300AAB746 /* MTInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9161F31F66200AAB746 /* MTInfoView.m */; };
 		BDDDA91A1F31F67400AAB746 /* MTInfoLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9191F31F67400AAB746 /* MTInfoLoopView.m */; };
+		BDDDA91E1F32057200AAB746 /* MTShopDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA91D1F32057200AAB746 /* MTShopDetailController.m */; };
+		BDDDA9211F32066C00AAB746 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9201F32066C00AAB746 /* UIView+Addition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,6 +190,10 @@
 		BDDDA9161F31F66200AAB746 /* MTInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTInfoView.m; sourceTree = "<group>"; };
 		BDDDA9181F31F67400AAB746 /* MTInfoLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTInfoLoopView.h; sourceTree = "<group>"; };
 		BDDDA9191F31F67400AAB746 /* MTInfoLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTInfoLoopView.m; sourceTree = "<group>"; };
+		BDDDA91C1F32057200AAB746 /* MTShopDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopDetailController.h; sourceTree = "<group>"; };
+		BDDDA91D1F32057200AAB746 /* MTShopDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopDetailController.m; sourceTree = "<group>"; };
+		BDDDA91F1F32066C00AAB746 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
+		BDDDA9201F32066C00AAB746 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				BDDDA8E21F2E019100AAB746 /* Main */,
+				BDDDA91B1F32054C00AAB746 /* ShopDetail */,
 				BDDDA8611F2DFAD100AAB746 /* Shop */,
 				BDDDA8601F2DFAD100AAB746 /* FoodDetail */,
 				BDDDA8F31F2F594C00AAB746 /* ShopOrder */,
@@ -286,6 +293,8 @@
 				BDDDA8ED1F2EB2AA00AAB746 /* NSObject+LinearFormula.m */,
 				BDDDA90E1F31F32E00AAB746 /* UIImage+Dashline.h */,
 				BDDDA90F1F31F32E00AAB746 /* UIImage+Dashline.m */,
+				BDDDA91F1F32066C00AAB746 /* UIView+Addition.h */,
+				BDDDA9201F32066C00AAB746 /* UIView+Addition.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -488,6 +497,15 @@
 			name = LoopView;
 			sourceTree = "<group>";
 		};
+		BDDDA91B1F32054C00AAB746 /* ShopDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA91C1F32057200AAB746 /* MTShopDetailController.h */,
+				BDDDA91D1F32057200AAB746 /* MTShopDetailController.m */,
+			);
+			name = ShopDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -595,6 +613,7 @@
 				BDDDA8BE1F2DFB6A00AAB746 /* MASCompositeConstraint.m in Sources */,
 				BDDDA8C91F2DFB6A00AAB746 /* NSData+ImageContentType.m in Sources */,
 				BDDDA8D01F2DFB6A00AAB746 /* SDWebImageDownloaderOperation.m in Sources */,
+				BDDDA9211F32066C00AAB746 /* UIView+Addition.m in Sources */,
 				BDDDA8BB1F2DFB6A00AAB746 /* AFURLRequestSerialization.m in Sources */,
 				BDDDA8CC1F2DFB6A00AAB746 /* SDImageCacheConfig.m in Sources */,
 				BDDDA8B91F2DFB6A00AAB746 /* AFNetworkReachabilityManager.m in Sources */,
@@ -606,6 +625,7 @@
 				BDDDA8C81F2DFB6A00AAB746 /* MKAnnotationView+WebCache.m in Sources */,
 				BDDDA8C31F2DFB6A00AAB746 /* MASViewConstraint.m in Sources */,
 				BDDDA8D81F2DFB6A00AAB746 /* UIImageView+WebCache.m in Sources */,
+				BDDDA91E1F32057200AAB746 /* MTShopDetailController.m in Sources */,
 				BDDDA8DA1F2DFB6A00AAB746 /* UIView+WebCacheOperation.m in Sources */,
 				BDDDA84A1F2DFA2200AAB746 /* main.m in Sources */,
 				BDDDA9081F31569C00AAB746 /* MTShopPOI_InfoModel.m in Sources */,

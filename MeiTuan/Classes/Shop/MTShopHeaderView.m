@@ -9,6 +9,7 @@
 #import "MTShopHeaderView.h"
 #import "MTShopPOI_InfoModel.h"
 #import "MTInfoLoopView.h"
+#import "MTShopDetailController.h"
 
 @interface MTShopHeaderView ()
 //背景view
@@ -140,7 +141,29 @@
     _nameLabel = nameLabel;
     _bulletinLabel = bulletinLabel;
     _loopView = loopView;
+    
+    //给轮播视图添加手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loopViewClick)];
+    
+    [loopView addGestureRecognizer:tap];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loopViewClick];
+    });
+    
+}
 
+//点击轮播视图
+- (void)loopViewClick
+{
+    MTShopDetailController *detailVC = [[MTShopDetailController alloc] init];
+    
+    detailVC.shopPOIInfoModel = _shopPOI_infoModel;
+    
+    //模态商家详情控制器
+    [self.viewController presentViewController:detailVC animated:YES completion:nil];
+    
+    
 }
 
 

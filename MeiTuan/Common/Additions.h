@@ -4,3 +4,4 @@
 #import "UIColor+Addition.m"
 #import "UILabel+Addition.h"
 #import "UIImage+Dashline.h"
+#import "UIView+Addition.h"
