@@ -67,6 +67,8 @@
 		BDDDA91E1F32057200AAB746 /* MTShopDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA91D1F32057200AAB746 /* MTShopDetailController.m */; };
 		BDDDA9211F32066C00AAB746 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9201F32066C00AAB746 /* UIView+Addition.m */; };
 		BDDDA9261F333C4A00AAB746 /* MTShopDetailAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9251F333C4A00AAB746 /* MTShopDetailAnimator.m */; };
+		BDDDA9301F33485500AAB746 /* MTShopOrderCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA92F1F33485500AAB746 /* MTShopOrderCategoryModel.m */; };
+		BDDDA9331F33486900AAB746 /* MTShopOrderFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BDDDA9321F33486900AAB746 /* MTShopOrderFoodModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +199,10 @@
 		BDDDA9201F32066C00AAB746 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
 		BDDDA9241F333C4A00AAB746 /* MTShopDetailAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopDetailAnimator.h; sourceTree = "<group>"; };
 		BDDDA9251F333C4A00AAB746 /* MTShopDetailAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopDetailAnimator.m; sourceTree = "<group>"; };
+		BDDDA92E1F33485500AAB746 /* MTShopOrderCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopOrderCategoryModel.h; sourceTree = "<group>"; };
+		BDDDA92F1F33485500AAB746 /* MTShopOrderCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopOrderCategoryModel.m; sourceTree = "<group>"; };
+		BDDDA9311F33486900AAB746 /* MTShopOrderFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopOrderFoodModel.h; sourceTree = "<group>"; };
+		BDDDA9321F33486900AAB746 /* MTShopOrderFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopOrderFoodModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,10 +261,10 @@
 			isa = PBXGroup;
 			children = (
 				BDDDA8E21F2E019100AAB746 /* Main */,
+				BDDDA9271F33451000AAB746 /* ShopOrder */,
 				BDDDA91B1F32054C00AAB746 /* ShopDetail */,
 				BDDDA8611F2DFAD100AAB746 /* Shop */,
 				BDDDA8601F2DFAD100AAB746 /* FoodDetail */,
-				BDDDA8F31F2F594C00AAB746 /* ShopOrder */,
 				BDDDA8F41F2F597100AAB746 /* ShopComment */,
 				BDDDA8F51F2F598800AAB746 /* ShopInfo */,
 			);
@@ -433,15 +439,6 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		BDDDA8F31F2F594C00AAB746 /* ShopOrder */ = {
-			isa = PBXGroup;
-			children = (
-				BDDDA8F61F2F59BB00AAB746 /* MTShopOrderController.h */,
-				BDDDA8F71F2F59BB00AAB746 /* MTShopOrderController.m */,
-			);
-			name = ShopOrder;
-			sourceTree = "<group>";
-		};
 		BDDDA8F41F2F597100AAB746 /* ShopComment */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +522,43 @@
 				BDDDA9251F333C4A00AAB746 /* MTShopDetailAnimator.m */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		BDDDA9271F33451000AAB746 /* ShopOrder */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA92A1F33452B00AAB746 /* Controller */,
+				BDDDA9291F33452500AAB746 /* Model */,
+				BDDDA9281F33452000AAB746 /* View */,
+			);
+			name = ShopOrder;
+			sourceTree = "<group>";
+		};
+		BDDDA9281F33452000AAB746 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BDDDA9291F33452500AAB746 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA92E1F33485500AAB746 /* MTShopOrderCategoryModel.h */,
+				BDDDA92F1F33485500AAB746 /* MTShopOrderCategoryModel.m */,
+				BDDDA9311F33486900AAB746 /* MTShopOrderFoodModel.h */,
+				BDDDA9321F33486900AAB746 /* MTShopOrderFoodModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BDDDA92A1F33452B00AAB746 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BDDDA8F61F2F59BB00AAB746 /* MTShopOrderController.h */,
+				BDDDA8F71F2F59BB00AAB746 /* MTShopOrderController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,6 +660,7 @@
 				BDDDA8D41F2DFB6A00AAB746 /* UIImage+GIF.m in Sources */,
 				BDDDA8CA1F2DFB6A00AAB746 /* NSImage+WebCache.m in Sources */,
 				BDDDA8DE1F2DFCEB00AAB746 /* MTShopController.m in Sources */,
+				BDDDA9301F33485500AAB746 /* MTShopOrderCategoryModel.m in Sources */,
 				BDDDA91A1F31F67400AAB746 /* MTInfoLoopView.m in Sources */,
 				BDDDA9171F31F66300AAB746 /* MTInfoView.m in Sources */,
 				BDDDA8C51F2DFB6A00AAB746 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -646,6 +681,7 @@
 				BDDDA8C71F2DFB6A00AAB746 /* ViewController+MASAdditions.m in Sources */,
 				BDDDA8C81F2DFB6A00AAB746 /* MKAnnotationView+WebCache.m in Sources */,
 				BDDDA8C31F2DFB6A00AAB746 /* MASViewConstraint.m in Sources */,
+				BDDDA9331F33486900AAB746 /* MTShopOrderFoodModel.m in Sources */,
 				BDDDA8D81F2DFB6A00AAB746 /* UIImageView+WebCache.m in Sources */,
 				BDDDA91E1F32057200AAB746 /* MTShopDetailController.m in Sources */,
 				BDDDA8DA1F2DFB6A00AAB746 /* UIView+WebCacheOperation.m in Sources */,
