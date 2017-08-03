@@ -8,9 +8,15 @@
 
 #import "MTShopDetailAnimator.h"
 
+typedef enum : NSUInteger{
+    MTShopDetailAnimatorTransitioningTypePresent,
+    MTShopDetailAnimatorTransitioningTypeDismiss,
+} MTShopDetailAnimatorTransitioningType;
+
+
 @interface MTShopDetailAnimator () <UIViewControllerAnimatedTransitioning>
-
-
+//转场样式
+@property (nonatomic, assign) MTShopDetailAnimatorTransitioningType transitioningType;
 
 @end
 
@@ -19,12 +25,16 @@
 //modal时调用
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
+    _transitioningType = MTShopDetailAnimatorTransitioningTypePresent;
+
     return self;
 }
 
 //dismiss时调用
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
+    _transitioningType = MTShopDetailAnimatorTransitioningTypeDismiss;
+
     return self;
 }
 
@@ -48,11 +58,36 @@
     //获取到容器视图
     UIView *containerView = [transitionContext containerView];
     
-    //把modal出来的界面添加到容器视图中
-    [containerView addSubview:toView];
-    
-    //转场完成后告诉系统转场完成
-    [transitionContext completeTransition:YES];
+    if (_transitioningType == MTShopDetailAnimatorTransitioningTypePresent)
+    {
+        //开始小的看不见
+        toView.transform = CGAffineTransformMakeScale(0, 0);
+        //把modal出来的界面添加到容器视图中
+        [containerView addSubview:toView];
+        
+        [UIView animateWithDuration:[self transitionDuration:nil] animations:^{
+            //恢复transform
+            toView.transform = CGAffineTransformIdentity;
+        
+        } completion:^(BOOL finished)
+         {
+            //转场完成后告诉系统转场完成
+            [transitionContext completeTransition:YES];
+        }];
+        
+    } else
+    {
+        [UIView animateWithDuration:[self transitionDuration:nil] animations:^{
+            //恢复transform
+            fromView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+            
+        } completion:^(BOOL finished)
+        {
+            //转场完成后告诉系统转场完成
+            [transitionContext completeTransition:YES];
+        }];
+        
+    }
 }
 
 @end
