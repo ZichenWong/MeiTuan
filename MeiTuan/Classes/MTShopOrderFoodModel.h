@@ -10,4 +10,10 @@
 
 @interface MTShopOrderFoodModel : NSObject
 
+//食品名
+@property (nonatomic, copy) NSString *name;
+
++ (instancetype)shopOrderFoodWithDict:(NSDictionary *)dict;
+
+
 @end

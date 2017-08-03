@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class MTShopOrderCategoryModel;
 @interface MTShopOrderController : UIViewController
+
+//接收全部食品模型数据
+@property (nonatomic, strong) NSArray<MTShopOrderCategoryModel *> *categoryData;
 
 @end
